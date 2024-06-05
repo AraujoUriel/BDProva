@@ -276,3 +276,35 @@ Agora um exemplo de leitura desses dados recem inseridos
 ```sql
 SELECT * FROM Biomas;
 ```
+Um print do que foi mostrado
+
+<img src="./imagens/Insercao Print.jpg"/>
+
+### 2 - Alteração e Deleção de Dados
+Agora iremos adicionar um boss ficticio para poder dar um exemplo de como deletar um valor e alterar um valor
+```sql
+INSERT INTO Boss (nome, tipo, bioma) VALUES
+('Fictitious Boss', 'Test Boss', 1);
+```
+O valor inserido na tabela
+
+<img src="./imagens/Insercao Print.jpg"/>
+
+Agora iremos alterar esse valor
+```sql
+UPDATE Boss
+SET nome = 'Love Whiter'
+WHERE nome = 'Fictitious Boss';
+```
+Como ficou na tabela
+
+<img src="./imagens/Insercao Print.jpg"/>
+
+Por último iremos deletar esse campo agora usando o seguinte código
+```sql
+DELETE FROM Boss
+WHERE nome = 'Love Whiter';
+```
+Como a tabela ficou depois de deletar
+
+<img src="./imagens/Insercao Print.jpg"/>
