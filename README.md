@@ -24,3 +24,9 @@ E por fim será cadastrado também uma tabela para os Boos do jogo de maneira pa
  Boss: contendo um id para cada, o nome deles, tipo para identificar se é ou não o boss final e em qual bioma se encontra esse bos
  
  ## 2 - Modelagem Conceitual
+
+ <img src="./imagens/provabd.jpg" width="100%" />
+
+ ## 3 - Modelagem Lógica
+
+ <img src="./imagens/ProvaBD_Tabelas.png" width="100%" />
