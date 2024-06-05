@@ -244,3 +244,35 @@ INSERT INTO Boss (nome, tipo, bioma) VALUES
 ('Ender Dragon', 'Final', 9),  -- Bioma: The End
 ('Wither', 'Opcional', 7);     -- Bioma: Nether
 ```
+
+## 6 - CRUD
+### 1 - Inserção e Leitura de Dados
+Abaixo Temos um exemplo de uma inserção de dados na tablea Biomas
+```sql
+INSERT INTO Biomas (nome) VALUES
+('Planície'),
+('Deserto'),
+('Floresta'),
+('Montanha'),
+('Pântano'),
+('Savanna'),
+('Oceano'),
+('Nether'),
+('The End'),
+('Bambu'),
+('Taiga'),
+('Campos'),
+('Jungle'),
+('Mushroom Island'),
+('Mesa'),
+('Ice Spikes'),
+('Deep Dark'),
+('Mangrove'),
+('Beach'),
+('Badlands');
+```
+
+Agora um exemplo de leitura desses dados recem inseridos
+```sql
+SELECT * FROM Biomas;
+```
