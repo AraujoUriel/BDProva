@@ -288,7 +288,7 @@ INSERT INTO Boss (nome, tipo, bioma) VALUES
 ```
 O valor inserido na tabela
 
-<img src="./imagens/Insercao Print.jpg"/>
+<img src="./imagens/bossfic.jpg"/>
 
 Agora iremos alterar esse valor
 ```sql
@@ -298,7 +298,7 @@ WHERE nome = 'Fictitious Boss';
 ```
 Como ficou na tabela
 
-<img src="./imagens/Insercao Print.jpg"/>
+<img src="./imagens/lovewhiter.jpg"/>
 
 Por último iremos deletar esse campo agora usando o seguinte código
 ```sql
@@ -307,4 +307,4 @@ WHERE nome = 'Love Whiter';
 ```
 Como a tabela ficou depois de deletar
 
-<img src="./imagens/Insercao Print.jpg"/>
+<img src="./imagens/expdel.jpg"/>
