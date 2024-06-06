@@ -110,6 +110,7 @@ CREATE TABLE Mobs_passivos (
 ## 5 - Inserção de Dados
 
 ```sql
+-- Inserir dados na tabela Biomas
 INSERT INTO Biomas (nome) VALUES
 ('Planície'),
 ('Deserto'),
@@ -149,102 +150,125 @@ INSERT INTO Itens (nome, raridade, durabilidade, gasto) VALUES
 ('Couro', 'Comum', NULL, NULL),
 ('Batata', 'Comum', NULL, NULL),
 ('Cenoura', 'Comum', NULL, NULL),
-('Trigo', 'Comum', NULL, NULL);
+('Trigo', 'Comum', NULL, NULL),
+('Diamond', 'Rare', 1561, 0),
+('Emerald', 'Rare', 0, 0),
+('Potion of Healing', 'Uncommon', 0, 0),
+('Netherite Ingot', 'Epic', 2031, 0);
 
 -- Inserir dados na tabela Drop_mobs
 INSERT INTO Drop_mobs (drop_1, drop_2, drop_3) VALUES
-(1, 5, 9),    -- Espada de Ferro, Osso, Barra de Ouro
-(2, 3, 8),    -- Arco, Pérola do Ender, Barra de Ferro
-(6, 7, 10),   -- Flecha, Pólvora, Frango Cru
-(4, 8, 9),    -- Bastão de Blaze, Barra de Ouro, Barra de Ferro
-(3, NULL, NULL), -- Pérola do Ender
-(4, NULL, NULL), -- Bastão de Blaze
-(2, 3, 8),    -- Arco, Pérola do Ender, Barra de Ferro
-(6, 7, 10),   -- Flecha, Pólvora, Frango Cru
-(1, 5, 9),    -- Espada de Ferro, Osso, Barra de Ouro
-(2, 3, NULL), -- Arco, Pérola do Ender
-(6, 7, 10),   -- Flecha, Pólvora, Frango Cru
-(4, 8, 9),    -- Bastão de Blaze, Barra de Ouro, Barra de Ferro
-(1, 6, 9),    -- Espada de Ferro, Flecha, Pepita de Ouro
-(2, 5, 10),   -- Arco, Osso, Frango Cru
-(11, NULL, NULL), -- Maçã
-(12, NULL, NULL), -- Carne de Vaca
-(13, NULL, NULL), -- Couro
-(14, NULL, NULL), -- Batata
-(15, NULL, NULL), -- Cenoura
-(16, NULL, NULL); -- Trigo
+(1, 5, 9),    
+(2, 3, 8),    
+(6, 7, 10),   
+(4, 8, 9),    
+(3, NULL, NULL), 
+(4, NULL, NULL), 
+(2, 3, 8),    
+(6, 7, 10),   
+(1, 5, 9),    
+(2, 3, NULL), 
+(6, 7, 10),   
+(4, 8, 9),    
+(1, 6, 9),    
+(2, 5, 10),   
+(11, NULL, NULL), 
+(12, NULL, NULL), 
+(13, NULL, NULL), 
+(14, NULL, NULL), 
+(15, NULL, NULL), 
+(16, NULL, NULL); 
 
 -- Inserir dados na tabela Mobs_hostis
 INSERT INTO Mobs_hostis (nome, bioma, drops_m) VALUES
-('Zumbi', 1, 1), -- Drops: Espada de Ferro, Osso, Barra de Ouro
-('Esqueleto', 2, 2), -- Drops: Arco, Pérola do Ender, Barra de Ferro
-('Creeper', 1, 3), -- Drops: Flecha, Pólvora, Frango Cru
-('Aranha', 3, 4), -- Drops: Bastão de Blaze, Barra de Ouro, Barra de Ferro
-('Enderman', 9, 5), -- Drops: Pérola do Ender
-('Blaze', 8, 6), -- Drops: Bastão de Blaze
-('Ghast', 8, 7), -- Drops: Arco, Pérola do Ender, Barra de Ferro
-('Slime', 5, 8), -- Drops: Flecha, Pólvora, Frango Cru
-('Pillager', 6, 9), -- Drops: Espada de Ferro, Osso, Barra de Ouro
-('Evoker', 6, 10), -- Drops: Pérola do Ender
-('Witch', 7, 11), -- Drops: Flecha, Pólvora, Frango Cru
-('Drowned', 1, 12), -- Drops: Bastão de Blaze, Barra de Ouro, Barra de Ferro
-('Vindicator', 3, 13), -- Drops: Espada de Ferro, Flecha, Pepita de Ouro
-('Phantom', 4, 14), -- Drops: Arco, Osso, Frango Cru
-('Husk', 2, 15), -- Drops: Maçã
-('Stray', 2, 16), -- Drops: Carne de Vaca
-('Wither Skeleton', 8, 17), -- Drops: Couro
-('Magma Cube', 8, 18), -- Drops: Batata
-('Piglin Brute', 8, 19), -- Drops: Cenoura
-('Zombie Pigman', 8, 20); -- Drops: Trigo
+('Zumbi', 1, 1), 
+('Esqueleto', 2, 2), 
+('Creeper', 1, 3), 
+('Aranha', 3, 4), 
+('Enderman', 9, 5), 
+('Blaze', 8, 6), 
+('Ghast', 8, 7), 
+('Slime', 5, 8), 
+('Pillager', 6, 9), 
+('Evoker', 6, 10), 
+('Witch', 7, 11), 
+('Drowned', 1, 12), 
+('Vindicator', 3, 13),
+('Phantom', 4, 14), 
+('Husk', 2, 15), 
+('Stray', 2, 16), 
+('Wither Skeleton', 8, 17), 
+('Magma Cube', 8, 18), 
+('Piglin Brute', 8, 19), 
+('Zombie Pigman', 8, 20); 
 
 -- Inserir dados na tabela Mobs_neutros
 INSERT INTO Mobs_neutros (nome, bioma, drops_m) VALUES
-('Lobo', 1, 1), -- Drops: Espada de Ferro, Osso
-('Endermite', 2, 2), -- Drops: Arco
-('Iron Golem', 3, 3), -- Drops: Pérola do Ender
-('Snow Golem', 4, 4), -- Drops: Bastão de Blaze
-('Piglin', 8, 5), -- Drops: Espada de Ferro, Osso, Barra de Ouro
-('Dolphin', 7, 6), -- Drops: Arco, Pérola do Ender, Barra de Ferro
-('Bee', 5, 7), -- Drops: Flecha, Pólvora, Frango Cru
-('Trader Llama', 6, 8), -- Drops: Bastão de Blaze, Barra de Ouro, Barra de Ferro
-('Panda', 10, 9), -- Drops: Espada de Ferro, Flecha, Pepita de Ouro
-('Polar Bear', 4, 10), -- Drops: Arco, Osso, Frango Cru
-('Pig', 11, 11), -- Drops: Maçã
-('Cow', 12, 12), -- Drops: Carne de Vaca
-('Sheep', 13, 13), -- Drops: Couro
-('Chicken', 14, 14), -- Drops: Batata
-('Horse', 15, 15), -- Drops: Cenoura
-('Donkey', 16, 16), -- Drops: Trigo
-('Mule', 17, 1), -- Drops: Espada de Ferro, Osso
-('Cat', 18, 2), -- Drops: Arco
-('Ocelot', 19, 3), -- Drops: Pérola do Ender
-('Fox', 20, 4); -- Drops: Bastão de Blaze
+('Lobo', 1, 1), 
+('Endermite', 2, 2), 
+('Iron Golem', 3, 3), 
+('Snow Golem', 4, 4), 
+('Piglin', 8, 5), 
+('Dolphin', 7, 6), 
+('Bee', 5, 7), 
+('Trader Llama', 6, 8), 
+('Panda', 10, 9), 
+('Polar Bear', 4, 10), 
+('Pig', 11, 11), 
+('Cow', 12, 12), 
+('Sheep', 13, 13),
+('Chicken', 14, 14),
+('Horse', 15, 15), 
+('Donkey', 16, 16),
+('Mule', 17, 1), 
+('Cat', 18, 2), 
+('Ocelot', 19, 3),
+('Fox', 20, 4); 
 
 -- Inserir dados na tabela Mobs_passivos
 INSERT INTO Mobs_passivos (nome, bioma, drops_m) VALUES
-('Vaca', 1, 11), -- Drops: Maçã
-('Porco', 2, 12), -- Drops: Carne de Vaca
-('Ovelha', 3, 13), -- Drops: Couro
-('Galinha', 4, 14), -- Drops: Batata
-('Cavalo', 5, 15), -- Drops: Cenoura
-('Burro', 6, 16), -- Drops: Trigo
-('Coelho', 7, 1), -- Drops: Espada de Ferro, Osso
-('Papagaio', 8, 2), -- Drops: Arco
-('Morcego', 9, 3), -- Drops: Pérola do Ender
-('Peixe', 7, 11), -- Drops: Maçã
-('Tartaruga', 1, 12), -- Drops: Carne de Vaca
-('Golfinho', 2, 13), -- Drops: Couro
-('Panda', 3, 14), -- Drops: Batata
-('Raposa', 4, 15), -- Drops: Cenoura
-('Abelha', 5, 16), -- Drops: Trigo
-('Cavalo Marinho', 6, 1), -- Drops: Espada de Ferro, Osso
-('Polvo', 7, 2), -- Drops: Arco
-('Avestruz', 8, 3), -- Drops: Pérola do Ender
-('Kiwi', 9, 4); -- Drops: Bastão de Blaze
+('Vaca', 1, 11),
+('Porco', 2, 12),
+('Ovelha', 3, 13),
+('Galinha', 4, 14),
+('Cavalo', 5, 15), 
+('Burro', 6, 16), 
+('Coelho', 7, 1), 
+('Papagaio', 8, 2),
+('Morcego', 9, 3), 
+('Peixe', 7, 11), 
+('Tartaruga', 1, 12),
+('Golfinho', 2, 13), 
+('Panda', 3, 14), 
+('Raposa', 4, 15), 
+('Abelha', 5, 16), 
+('Cavalo Marinho', 6, 1), 
+('Polvo', 7, 2), 
+('Avestruz', 8, 3),
+('Kiwi', 9, 4),
+('Vaca Cogumelo', 2, 10);
 
 INSERT INTO Boss (nome, tipo, bioma) VALUES
-('Ender Dragon', 'Final', 9),  -- Bioma: The End
-('Wither', 'Opcional', 7);     -- Bioma: Nether
+('Ender Dragon', 'Final', 9),  
+('Wither', 'Opcional', 7),     
+('Lava Titan', 'Opicional', 7),
+('Frost Giant', 'Opicional', 16),
+('Shadow Serpent', 'Opicional', 17),
+('Sand Wraith', 'Opicional', 2),
+('Jungle Guardian', 'Opicional', 13),
+('Ocean Leviathan', 'Opicional', 6),
+('Mountain Golem', 'Opicional', 4),
+('Swamp Beast', 'Opicional', 5),
+('Savanna Stalker', 'Opicional', 10),
+('Taiga Hunter', 'Opicional', 11),
+('Field Marauder', 'Opicional', 12),
+('Mushroom King', 'Opicional', 14),
+('Mesa Lord', 'Opicional', 15),
+('Bamboo Warrior', 'Opicional', 10),
+('Mangrove Sentinel', 'Opicional', 18),
+('Beach Phantom', 'Opicional', 19),
+('Crystal Dragon', 'Opicional', 9),
+('Inferno Warlock', 'Opicional', 8);
 ```
 
 ## 6 - CRUD
