@@ -308,3 +308,105 @@ WHERE nome = 'Love Whiter';
 Como a tabela ficou depois de deletar
 
 <img src="./imagens/expdel.jpg"/>
+
+## 7 - Relatórios
+Agora para testar o banco, razlizaremos 10 relatórios/consulta
+### Consulta 1: Seleciona todos os biomas e ordenar por nome
+```sql
+SELECT * FROM Biomas
+ORDER BY nome;
+```
+O que foi mostrado:
+
+<img src="./imagens/c1.jpg"/>
+
+### Consulta 2: Seleciona todos os itens e suas durabilidades restantes, ordenando pela raridade
+```sql
+SELECT nome, raridade, dur_rest FROM Itens
+ORDER BY raridade;
+```
+O que foi mostrado:
+
+<img src="./imagens/c2.jpg"/>
+
+###  Consulta 3: Seleciona todos os mobs hostis e os biomas em que eles aparecem
+```sql
+SELECT Mobs_hostis.nome AS Mob, Biomas.nome AS Bioma FROM Mobs_hostis
+JOIN Biomas ON Mobs_hostis.bioma = Biomas.id_bioma
+ORDER BY Mobs_hostis.nome;
+```
+O que foi mostrado:
+
+<img src="./imagens/c3.jpg"/>
+
+### Consulta 4: Seleciona todos os mobs neutros que aparecem na 'Floresta'
+```sql
+SELECT Mobs_neutros.nome AS Mob FROM Mobs_neutros
+JOIN Biomas ON Mobs_neutros.bioma = Biomas.id_bioma
+WHERE Biomas.nome = 'Floresta';
+```
+O que foi mostrado:
+
+<img src="./imagens/c4.jpg"/>
+
+### Consulta 5: Seleciona todos os mobs passivos e os itens que eles dropam
+```sql
+SELECT Mobs_passivos.nome AS Mob, Itens.nome AS Item FROM Mobs_passivos
+JOIN Drop_mobs ON Mobs_passivos.drops_m = Drop_mobs.id_drop
+JOIN Itens ON Drop_mobs.drop_1 = Itens.id_item
+ORDER BY Mobs_passivos.nome;
+```
+O que foi mostrado:
+
+<img src="./imagens/c5.jpg"/>
+
+### Consulta 6: Seleciona todos os bosses e os biomas em que eles aparecem, ordenando por tipo
+```sql
+SELECT Boss.nome AS Boss, Biomas.nome AS Bioma, Boss.tipo FROM Boss
+JOIN Biomas ON Boss.bioma = Biomas.id_bioma
+ORDER BY Boss.tipo;
+```
+O que foi mostrado:
+
+<img src="./imagens/c6.jpg"/>
+
+### Consulta 7: Seleciona todos os mobs hostis que dropam 'Espada de Ferro'
+```sql
+SELECT Mobs_hostis.nome AS Mob FROM Mobs_hostis
+JOIN Drop_mobs ON Mobs_hostis.drops_m = Drop_mobs.id_drop
+JOIN Itens ON Drop_mobs.drop_1 = Itens.id_item OR Drop_mobs.drop_2 = Itens.id_item OR Drop_mobs.drop_3 = Itens.id_item
+WHERE Itens.nome = 'Espada de Ferro';
+```
+O que foi mostrado:
+
+<img src="./imagens/c7.jpg"/>
+
+### Consulta 8: Conta quantos mobs passivos existem em cada bioma, ordenando pelo número de mobs
+```sql
+SELECT Biomas.nome AS Bioma, COUNT(Mobs_passivos.id_mob_p) AS Num_Mobs FROM Mobs_passivos
+JOIN Biomas ON Mobs_passivos.bioma = Biomas.id_bioma
+GROUP BY Biomas.nome
+ORDER BY Num_Mobs DESC;
+```
+O que foi mostrado:
+
+<img src="./imagens/c8.jpg"/>
+
+### Consulta 9: Seleciona todos os itens que são raros e ordenar pelo nome
+```sql
+WHERE raridade = 'Raro'
+ORDER BY nome;
+```
+O que foi mostrado:
+
+<img src="./imagens/c9.jpg"/>
+###  Consulta 10: Selecionar todos os mobs neutros e hostis que aparecem no mesmo bioma, mostrando o bioma e os nomes dos mobs
+```sql
+SELECT Biomas.nome AS Bioma, Mobs_neutros.nome AS Neutro, Mobs_hostis.nome AS Hostil FROM Mobs_neutros
+JOIN Biomas ON Mobs_neutros.bioma = Biomas.id_bioma
+JOIN Mobs_hostis ON Mobs_hostis.bioma = Biomas.id_bioma
+ORDER BY Biomas.nome, Mobs_neutros.nome, Mobs_hostis.nome;
+```
+O que foi mostrado:
+
+<img src="./imagens/c8.jpg"/>
