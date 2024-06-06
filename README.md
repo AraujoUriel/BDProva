@@ -400,6 +400,7 @@ ORDER BY nome;
 O que foi mostrado:
 
 <img src="./imagens/c9.jpg"/>
+
 ###  Consulta 10: Selecionar todos os mobs neutros e hostis que aparecem no mesmo bioma, mostrando o bioma e os nomes dos mobs
 ```sql
 SELECT Biomas.nome AS Bioma, Mobs_neutros.nome AS Neutro, Mobs_hostis.nome AS Hostil FROM Mobs_neutros
