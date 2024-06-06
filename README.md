@@ -329,7 +329,7 @@ ORDER BY raridade;
 ```
 O que foi mostrado:
 
-<img src="./imagens/c2.jpg"/>
+<img src="./imagens/c2.jpg"/
 
 ###  Consulta 3: Seleciona todos os mobs hostis e os biomas em que eles aparecem
 ```sql
@@ -370,7 +370,7 @@ ORDER BY Boss.tipo;
 ```
 O que foi mostrado:
 
-<img src="./imagens/c6.jpg"/>
+<img src="./imagens/c6.jpg"/
 
 ### Consulta 7: Seleciona todos os mobs hostis que dropam 'Espada de Ferro'
 ```sql
