@@ -4,24 +4,26 @@
 
 ### Descrição do Cenário
 
- Em uma vila de um mundo quadrado, Steve tinha acabado de voltar de uma aventura com sua amiga Alex. Eles haviam coletado muitos materiais e encontrado diversas criaturas. Porem no meio dessa aventura eles acabaram perdendo muito tempo procurando itens e criaturas que eles já haviam encontrado de novo por não lembrar mais onde encontrar tais itens. Então eles decidiram criar um sistema de banco de dados para facilitar as próximas aventuras. Nesse sistema eles planejam cadastrar todos os itens e materiais encontrados e todas as criaturas e bosses encontrados, falando sempre o que cada criatura poderia derrubar ao ser abatida.
+ Em uma vila de um mundo quadrado um pouco diferente de como conhecemos, Estive tinha acabado de voltar de uma aventura com sua amiga Alexana. Eles haviam coletado muitos materiais e encontrado diversas criaturas. Porem no meio dessa aventura eles acabaram perdendo muito tempo procurando itens e criaturas, que eles já haviam encontrado, de novo por não lembrar mais onde encontrar tais itens e criaturas. Então eles decidiram criar um sistema de banco de dados para facilitar as próximas aventuras. Nesse sistema eles planejam cadastrar todos os itens e materiais encontrados e todas as criaturas e bosses encontrados, falando sempre o que cada criatura poderia derrubar ao ser abatida.
 
-O que Stive planeja cadastrar será organizado da seguinte forma:
+O que Estive planeja cadastrar será organizado da seguinte forma:
 
- Itens: contendo um id para cada, nome deles, durabilidade (se tiver), o tempo de uso, o quanto o itens está gasto e a raridade do item
+ Itens: contendo um id para cada, nome deles, durabilidade (se tiver), o tempo de uso, o quanto o itens está gasto e a raridade do item.
 
 Já os Mobs serão dividos em três categorias sendo elas Mobs Passivos, Mobs Hostis e Mobs Neutros contento os seguintes campos:
 
- Mobs: contendo um id para cada, o nome deles, o bioma de geração deles e o que esse mob dropa
+ Mobs: contendo um id para cada, o nome deles, o bioma de geração deles e o que esse mob dropa.
 
 também será cadastrado Biomas e as combinações de drops de cada mob da seguinte maneira:
 
  Biomas: contendo um id para cada e o nome do bioma
- Drop dos Mobs: contendo um id para cada combinação de itens que foram dropados e 3 campos para cadastrar até 3 itens que podem ser dropados pelo mob
+ Drop dos Mobs: contendo um id para cada combinação de itens que foram dropados e 3 campos para cadastrar até 3 itens que podem ser dropados pelo mob.
 
 E por fim será cadastrado também uma tabela para os Boos do jogo de maneira parecida com a dos Mobs:
 
- Boss: contendo um id para cada, o nome deles, tipo para identificar se é ou não o boss final e em qual bioma se encontra esse bos
+ Boss: contendo um id para cada, o nome deles, tipo para identificar se é ou não o boss final e em qual bioma se encontra esse bos.
+
+Agora depois de planejar o que deveria fazer, Estive começara a fazer o seu projeto.
  
  ## 2 - Modelagem Conceitual
 
@@ -247,7 +249,7 @@ INSERT INTO Boss (nome, tipo, bioma) VALUES
 
 ## 6 - CRUD
 ### 1 - Inserção e Leitura de Dados
-Abaixo Temos um exemplo de uma inserção de dados na tablea Biomas
+Abaixo Temos um exemplo de uma inserção de dados na tablea Biomas:
 ```sql
 INSERT INTO Biomas (nome) VALUES
 ('Planície'),
@@ -272,35 +274,35 @@ INSERT INTO Biomas (nome) VALUES
 ('Badlands');
 ```
 
-Agora um exemplo de leitura desses dados recem inseridos
+Agora um exemplo de leitura desses dados recem inseridos:
 ```sql
 SELECT * FROM Biomas;
 ```
-Um print do que foi mostrado
+Um print do que foi mostrado:
 
 <img src="./imagens/Insercao Print.jpg"/>
 
 ### 2 - Alteração e Deleção de Dados
-Agora iremos adicionar um boss ficticio para poder dar um exemplo de como deletar um valor e alterar um valor
+Agora iremos adicionar um boss ficticio para poder dar um exemplo de como deletar um valor e alterar um valor:
 ```sql
 INSERT INTO Boss (nome, tipo, bioma) VALUES
 ('Fictitious Boss', 'Test Boss', 1);
 ```
-O valor inserido na tabela
+O valor inserido na tabela:
 
 <img src="./imagens/bossfic.jpg"/>
 
-Agora iremos alterar esse valor
+Agora iremos alterar esse valor:
 ```sql
 UPDATE Boss
 SET nome = 'Love Whiter'
 WHERE nome = 'Fictitious Boss';
 ```
-Como ficou na tabela
+Como ficou na tabela:
 
 <img src="./imagens/lovewhiter.jpg"/>
 
-Por último iremos deletar esse campo agora usando o seguinte código
+Por último iremos deletar esse campo agora usando o seguinte código:
 ```sql
 DELETE FROM Boss
 WHERE nome = 'Love Whiter';
@@ -310,7 +312,7 @@ Como a tabela ficou depois de deletar
 <img src="./imagens/expdel.jpg"/>
 
 ## 7 - Relatórios
-Agora para testar o banco, razlizaremos 10 relatórios/consulta
+Agora para testar o banco, razlizaremos 10 relatórios/consulta.
 ### Consulta 1: Seleciona todos os biomas e ordenar por nome
 ```sql
 SELECT * FROM Biomas
